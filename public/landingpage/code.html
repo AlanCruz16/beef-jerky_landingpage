@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lavinia - Premium Beef Jerky</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Work+Sans:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37", // Metallic Gold
+                        "primary-dark": "#B5952F",
+                        "background-dark": "#000000", // Pitch black
+                        "surface-dark": "#0F0F0F", // Very dark grey for sections
+                        "surface-lighter": "#1A1A1A", 
+                        "ribbon-green": "#1B3B2B", // Deep forest green
+                        "accent-copper": "#C87533", // Copper
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        body: ["'Work Sans'", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grain': "url('https://www.transparenttextures.com/patterns/stardust.png')",
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .text-glow {
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+        .animate-float-slow {
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-gray-200 font-body antialiased selection:bg-primary selection:text-black">
+<nav class="fixed w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex-shrink-0 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">agriculture</span>
+<span class="font-display font-black text-2xl tracking-[0.2em] text-white uppercase">Lavinia</span>
+</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a class="text-xs font-medium hover:text-primary transition-colors uppercase tracking-[0.15em] text-gray-300" href="#">Shop Jerky</a>
+<a class="text-xs font-medium hover:text-primary transition-colors uppercase tracking-[0.15em] text-gray-300" href="#">Recipes</a>
+<a class="text-xs font-medium hover:text-primary transition-colors uppercase tracking-[0.15em] text-gray-300" href="#">About</a>
+<a class="text-xs font-medium hover:text-primary transition-colors uppercase tracking-[0.15em] text-gray-300" href="#">Reviews</a>
+<a class="text-xs font-medium hover:text-primary transition-colors uppercase tracking-[0.15em] text-gray-300" href="#">FAQ</a>
+</div>
+<div class="hidden lg:flex items-center gap-6">
+<button class="text-gray-400 hover:text-primary transition-colors relative group flex items-center gap-2">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-accent-copper text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">2</span>
+</button>
+</div>
+<div class="flex lg:hidden">
+<button class="text-gray-300 hover:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="relative pt-20 lg:pt-0 min-h-screen flex items-center bg-background-dark overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-grain opacity-20"></div>
+<div class="absolute top-0 right-0 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[150px] transform translate-x-1/3 -translate-y-1/4"></div>
+<div class="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-accent-copper/5 rounded-full blur-[100px] transform -translate-x-1/4 translate-y-1/4"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1 space-y-8 text-center lg:text-left">
+<div class="inline-flex items-center gap-3 px-4 py-2 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm mx-auto lg:mx-0">
+<span class="material-symbols-outlined text-primary text-sm">workspace_premium</span>
+<span class="text-xs font-semibold tracking-widest uppercase text-gray-300">Premium Artisan Quality</span>
+</div>
+<h1 class="font-display font-black text-5xl md:text-7xl leading-[1.1] text-white">
+<span class="block">The High</span>
+<span class="block text-primary">Protein Snack</span>
+<span class="block text-4xl md:text-5xl font-light italic mt-2 text-gray-400">You've Ever Tasted.</span>
+</h1>
+<p class="text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed border-l-2 border-accent-copper/50 pl-6">
+                    Whole cuts of prime meat, just like a steak in your pocket. Crafted with minimal ingredients for maximum sophistication.
+                </p>
+<div class="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start pt-6">
+<a class="group relative px-8 py-4 bg-primary hover:bg-primary-dark text-black font-bold text-lg uppercase tracking-widest rounded-sm transition-all overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.2)] w-full sm:w-auto text-center" href="#">
+<span class="relative z-10 flex items-center justify-center gap-2">
+                            Order Now 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward_ios</span>
+</span>
+</a>
+</div>
+<div class="pt-8 flex items-center justify-center lg:justify-start gap-8 opacity-60">
+<img alt="placeholder" class="h-8 grayscale opacity-50 hidden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALLqfbQPABn6n2kLLzU8EjwrRo7o8s2xdLzLPPNwdo6uHGDf2Axhu8c-QpPPEvaAsUr2s_ioZAhc7gVoUsPBBIBjHGhYtI-Lya9DHedLR1JYc2y1ZniFxSWXq0xM5bjgDzIss-tip9sjq3CCvCD3LMkBsknmXFZwlmdLBTn1EfjmTA01kX_kUt_vGDb9XCxDUMVLxmMDWB5xzDCjO5KHmT__NYsUP80tpE20a23m_Myv4isjAGi0BxiZzzbcOvs97Lv33sm3-Z6T4"/> 
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-copper">verified</span>
+<span class="text-xs uppercase tracking-wider text-gray-400">Certified Organic</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-copper">local_shipping</span>
+<span class="text-xs uppercase tracking-wider text-gray-400">Free Shipping $50+</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 relative h-[500px] md:h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 pointer-events-none">
+<img alt="Black Pepper" class="absolute top-10 right-0 w-24 h-24 object-contain opacity-40 blur-[1px] animate-float-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkL9SzNL_kv5_f-OHEh5BVRYbZP7_AdleX8NkmhxMxSgNg7XHnGGbXLS705Yo1yyWey4CfYW0lcIY_NOD0NsyVIp6h3xt6EbdK1UTk4DVkLoQmuOrGOSJ_fM_OxrpwgegBYCdn9nk6ikJXI0WbZlyJg_hTnKkwrMWZRPq-V9Xl8CMuKHuDYBBFXHBZUWuq6do29LsABf-l8CqdbzCbYQv5DB7XJsLXCXhUWLEzGG2mHh8jTC8KYpptO3e4azvTqYPsScj2LT6QrC8" style="animation-delay: 1s;"/>
+<img alt="Salt Crystals" class="absolute bottom-20 left-10 w-20 h-20 object-contain opacity-30 blur-[2px] animate-float-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCk_sRmddTPHFyaxEyEvHEOlREwrS1k4k7hV7y7-ccOzAxMA-HTXdC83PxHq_enyJKxIvtc8G9_kp2syxIKd4Ig3-LGaA93IRz0o7DU_fBwCLFb7e9fzo7FJ9xke0NeUEXIR5z2LdFAAk0THeKeD3cUa7OLYZp_rDR_BbxCVWI67IYibemYS9R1xvfEMvA6aRc-VGVowCy12z6Z4J4vNygarsXdRftivh_DhIs3f8ZTHRoW4eHrJsk5Eng8aXkPSvrH78qSp-wsw0" style="animation-delay: 2.5s;"/>
+<img alt="Chili" class="absolute top-1/2 left-0 w-16 h-auto rotate-[-15deg] opacity-60 drop-shadow-2xl animate-float-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0FTEQ3qFm0jjiX-YohIcSNPVsDncxdSk8FNdumNVw4tUfW5Eqzunn6Y8jZtylLcfdoiUlTcIA7qSI8FJIJqyVc34XTPQcLi3ln2K4xpd1pEJsIxLvhozeuTXNPVxF3keeQNmUXtd5f6mZd2E5tX2lP_jstIhFrfOxljoDDDZYwstjvnP1uS_Nu0BHdkKEmMud9WpZGE2AY1JN6IeK3vxq5OXoYVTx4vWKHjJuMpPmuoVI3K-n6LaRNNO6Uov1-H-rUnJEd7LbOk0" style="animation-delay: 0.5s;"/>
+</div>
+<div class="relative z-10 w-full max-w-lg mx-auto transform hover:scale-105 transition-transform duration-700 ease-out">
+<div class="relative aspect-[4/5] mx-auto">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-tr from-accent-copper/20 to-primary/10 rounded-full blur-[60px]"></div>
+<img alt="Premium Beef Jerky Packaging Black and Gold" class="relative z-10 w-full h-full object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpeow20aBHiEAnwhI89kyQ71xnwLHFr_foeLxG5EgSaRW9LF20JnshwsFVBmsVSAQEfGUnYcFLZp_SM_8cy-i_LY8FSFaw_TrJjHs_-aPVOv6t6KkLXP2GyCRa7SGt1crNs-_vqiW43AntnlTH5D83bfD8-9zVQ7Y9mhu7VqPO2vo6nyM1soEEF22vkeByg3kwvCGghUdjdTLoHyjS11DNbQTrjCtiygsNYGs_6LNkVEIxeAqhkKvXxUwxh6B0ckfHAUTrymh6TBU"/>
+<div class="absolute -right-4 top-20 z-20 bg-surface-lighter border border-white/10 p-4 rounded-full shadow-2xl animate-float-slow backdrop-blur-md bg-opacity-80">
+<div class="text-center">
+<span class="block text-2xl font-display font-bold text-primary">26g</span>
+<span class="text-[10px] uppercase tracking-widest text-gray-400">Protein</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="w-full bg-ribbon-green border-y border-white/5 relative z-20 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-wrap justify-between items-center py-6 gap-4 md:gap-0">
+<div class="flex items-center gap-3 flex-1 justify-center md:justify-start">
+<span class="material-symbols-outlined text-white text-2xl">fitness_center</span>
+<span class="font-display font-bold text-xl text-white uppercase tracking-wider">High Protein</span>
+</div>
+<div class="hidden md:block w-px h-8 bg-white/20"></div>
+<div class="flex items-center gap-3 flex-1 justify-center">
+<span class="material-symbols-outlined text-white text-2xl">science</span>
+<span class="font-display font-bold text-xl text-white uppercase tracking-wider">Non GMO</span>
+</div>
+<div class="hidden md:block w-px h-8 bg-white/20"></div>
+<div class="flex items-center gap-3 flex-1 justify-center">
+<span class="material-symbols-outlined text-white text-2xl">grass</span>
+<span class="font-display font-bold text-xl text-white uppercase tracking-wider">Fiber Rich</span>
+</div>
+<div class="hidden md:block w-px h-8 bg-white/20"></div>
+<div class="flex items-center gap-3 flex-1 justify-center md:justify-end">
+<span class="material-symbols-outlined text-white text-2xl">favorite</span>
+<span class="font-display font-bold text-xl text-white uppercase tracking-wider">Healthy Snack</span>
+</div>
+</div>
+</div>
+</div>
+<section class="py-24 bg-surface-dark border-t border-white/5 relative z-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+<div class="px-4 space-y-6 pt-8 md:pt-0">
+<div class="mx-auto w-20 h-20 bg-background-dark border border-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110 duration-300 shadow-lg">
+<span class="material-symbols-outlined text-primary text-4xl">grass</span>
+</div>
+<div>
+<h3 class="font-display font-bold text-2xl text-white mb-2">Sourced From<br/>Grassfed Beef</h3>
+<div class="w-12 h-1 bg-accent-copper mx-auto mb-4"></div>
+<p class="text-gray-400 font-light leading-relaxed">
+                        Ethically raised on open pastures. All our beef is 100% grass-fed and finished for superior taste.
+                    </p>
+</div>
+</div>
+<div class="px-4 space-y-6 pt-12 md:pt-0">
+<div class="mx-auto w-20 h-20 bg-background-dark border border-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110 duration-300 shadow-lg">
+<span class="material-symbols-outlined text-primary text-4xl">restaurant_menu</span>
+</div>
+<div>
+<h3 class="font-display font-bold text-2xl text-white mb-2">High In Protein,<br/>Big On Taste</h3>
+<div class="w-12 h-1 bg-accent-copper mx-auto mb-4"></div>
+<p class="text-gray-400 font-light leading-relaxed">
+                        Packed with natural protein to fuel your day. No fillers, just pure energy.
+                    </p>
+</div>
+</div>
+<div class="px-4 space-y-6 pt-12 md:pt-0">
+<div class="mx-auto w-20 h-20 bg-background-dark border border-white/10 rounded-full flex items-center justify-center transition-transform hover:scale-110 duration-300 shadow-lg">
+<span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+</div>
+<div>
+<h3 class="font-display font-bold text-2xl text-white mb-2">By Premium<br/>Ingredients</h3>
+<div class="w-12 h-1 bg-accent-copper mx-auto mb-4"></div>
+<p class="text-gray-400 font-light leading-relaxed">
+                        A healthier life starts with real food. We use only whole ingredients you can pronounce.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</body></html>

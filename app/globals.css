@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #050505;
+    --foreground: #ededed;
+    --berry-punch: #D41C61;
+    /* Approximate "Berry Punch" */
+    --golden-saffron: #F59E0B;
+    /* Approximate "Golden Saffron" */
+    --surface: #0A0A0A;
+    --surface-light: #141414;
+    --muted: #888888;
+    --ribbon: #1A1A1A;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* SF Pro style */
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Typography Utilities */
+.text-berry {
+    color: var(--berry-punch);
+}
+
+.text-gold {
+    color: var(--golden-saffron);
+}
