@@ -45,24 +45,38 @@ export default function HeroCanvas() {
 
         if (!canvas || !ctx || !img) return;
 
-        // Scaling logic (contain)
+        // Scaling logic (Option 1 Cover + Option 3 Asymmetric Framing for Mobile)
         const canvasWidth = canvas.width;
         const canvasHeight = canvas.height;
         const imgRatio = img.width / img.height;
         const canvasRatio = canvasWidth / canvasHeight;
 
         let drawWidth, drawHeight, offsetX, offsetY;
+        const isMobile = canvasWidth < 768;
 
-        if (canvasRatio > imgRatio) {
-            drawHeight = canvasHeight;
-            drawWidth = img.width * (canvasHeight / img.height);
-            offsetX = (canvasWidth - drawWidth) / 2;
-            offsetY = 0;
-        } else {
-            drawWidth = canvasWidth;
-            drawHeight = img.height * (canvasWidth / img.width);
-            offsetX = 0;
+        if (isMobile) {
+            // Mobile: Zoom in significantly (essentially 'cover' but with explicit sizing)
+            const mobileZoomFactor = 2.5;
+            drawWidth = canvasWidth * mobileZoomFactor;
+            drawHeight = drawWidth / imgRatio;
+
+            offsetX = (canvasWidth - drawWidth) / 2; // Center horizontally
+
+            // Center vertically (0.5 or / 2)
             offsetY = (canvasHeight - drawHeight) / 2;
+        } else {
+            // Desktop: Original 'contain' logic to preserve perfect landscape view
+            if (canvasRatio > imgRatio) {
+                drawHeight = canvasHeight;
+                drawWidth = img.width * (canvasHeight / img.height);
+                offsetX = (canvasWidth - drawWidth) / 2;
+                offsetY = 0;
+            } else {
+                drawWidth = canvasWidth;
+                drawHeight = img.height * (canvasWidth / img.width);
+                offsetX = 0;
+                offsetY = (canvasHeight - drawHeight) / 2;
+            }
         }
 
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
