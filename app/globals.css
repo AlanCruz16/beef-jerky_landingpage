@@ -6,20 +6,19 @@
     --background: #050505;
     --foreground: #ededed;
     --berry-punch: #D41C61;
-    /* Approximate "Berry Punch" */
     --golden-saffron: #F59E0B;
-    /* Approximate "Golden Saffron" */
     --surface: #0A0A0A;
     --surface-light: #141414;
     --muted: #888888;
     --ribbon: #1A1A1A;
+    --warm-surface: #1a1510;
+    --warm-surface-light: #221c14;
 }
 
 body {
     color: var(--foreground);
     background: var(--background);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    /* SF Pro style */
     overflow-x: hidden;
 }
 
@@ -48,4 +47,121 @@ body {
 
 .text-gold {
     color: var(--golden-saffron);
+}
+
+/* ===== RANCH TO TABLE DESIGN SYSTEM ===== */
+
+/* Warm tinted backgrounds */
+.bg-warm {
+    background-color: var(--warm-surface);
+}
+
+.bg-warm-light {
+    background-color: var(--warm-surface-light);
+}
+
+/* Gold glow effect on hover */
+.gold-glow {
+    transition: box-shadow 0.4s ease;
+}
+
+.gold-glow:hover {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05);
+}
+
+/* Handwritten accent font */
+.font-script {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+}
+
+/* SVG hand-drawn underline */
+.hand-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hand-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'%3E%3Cpath d='M2 4 Q50 1 100 5 Q150 8 198 3' stroke='%23F59E0B' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100% 100%;
+}
+
+/* SVG hand-drawn circle */
+.hand-circle {
+    position: relative;
+    display: inline-block;
+}
+
+.hand-circle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -14px;
+    right: -14px;
+    bottom: -10px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 60'%3E%3Cellipse cx='75' cy='30' rx='70' ry='25' stroke='%23F59E0B' stroke-width='1.5' fill='none' stroke-dasharray='4 3' transform='rotate(-2 75 30)'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
+/* Ticker tape animation */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-track {
+    animation: ticker 30s linear infinite;
+}
+
+/* Icon float animation */
+@keyframes icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.icon-float {
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+/* Masonry pin-in animation */
+@keyframes pin-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) rotate(var(--rotation, 0deg)) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--rotation, 0deg)) scale(1);
+    }
+}
+
+/* Timeline draw-on */
+@keyframes draw-line {
+    from {
+        stroke-dashoffset: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
 }

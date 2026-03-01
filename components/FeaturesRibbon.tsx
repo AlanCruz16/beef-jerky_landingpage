@@ -1,40 +1,41 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 
-const features = [
-    { title: "PRODUCTO SONORENSE" },
-    { title: "26G PROTEÍNA" },
-    { title: "SIN AZÚCAR" },
-    { title: "SIN GLUTEN" },
+const ingredients = [
+    { icon: '🐄', label: 'Res Grass-Fed' },
+    { icon: '🌶', label: 'Chile Sonorense' },
+    { icon: '💪', label: '26g Proteína' },
+    { icon: '🚫', label: 'Sin Azúcar' },
+    { icon: '🌾', label: 'Sin Gluten' },
+    { icon: '🔥', label: 'Ahumado Natural' },
+    { icon: '🧂', label: 'Sal de Mar' },
+    { icon: '🌿', label: 'Especias Naturales' },
 ];
 
 export default function FeaturesRibbon() {
+    // Duplicate array for seamless loop
+    const items = [...ingredients, ...ingredients];
+
     return (
-        <div className="w-full bg-[#0a0a0a] border-y border-white/5 relative z-20 overflow-hidden py-8">
-            <div className="relative w-full flex overflow-hidden mask-linear-fade">
-                <motion.div
-                    className="flex flex-nowrap gap-12 md:gap-24 whitespace-nowrap"
-                    initial={{ x: "-50%" }}
-                    animate={{ x: "0%" }}
-                    transition={{
-                        repeat: Infinity,
-                        ease: "linear",
-                        duration: 60 // Much slower duration for premium feel
-                    }}
-                >
-                    {/* Quadruple the list to ensure no gaps during the loop reset */}
-                    {[...features, ...features, ...features, ...features, ...features, ...features].map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-12 md:gap-24">
-                            <span className="font-display font-black text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 uppercase tracking-widest shrink-0">
-                                {feature.title}
+        <section className="relative z-20 bg-warm border-y border-gold/10 overflow-hidden py-5 md:py-6">
+            {/* Ticker Tape */}
+            <div className="ticker-track flex items-center w-max">
+                {items.map((item, i) => (
+                    <React.Fragment key={i}>
+                        <div className="flex items-center gap-3 px-4 sm:px-6 shrink-0">
+                            <span className="text-2xl icon-float" style={{ animationDelay: `${i * 0.4}s` }}>
+                                {item.icon}
                             </span>
-                            <span className="w-2 h-2 rounded-full bg-berry shrink-0" />
+                            <span className="text-white/60 text-sm tracking-widest uppercase whitespace-nowrap font-light">
+                                {item.label}
+                            </span>
                         </div>
-                    ))}
-                </motion.div>
+                        {/* Gold separator dot */}
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold/40 shrink-0"></span>
+                    </React.Fragment>
+                ))}
             </div>
-        </div>
+        </section>
     );
 }

@@ -17,11 +17,14 @@ const config: Config = {
                 "surface-light": "var(--surface-light)",
                 muted: "var(--muted)",
                 ribbon: "var(--ribbon)",
+                "warm": "var(--warm-surface)",
+                "warm-light": "var(--warm-surface-light)",
             },
             fontFamily: {
                 sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
                 display: ['"Playfair Display"', 'serif'],
-            }
+                script: ['"Caveat"', 'cursive'],
+            },
         },
     },
     plugins: [],
