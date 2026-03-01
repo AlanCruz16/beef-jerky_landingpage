@@ -21,7 +21,11 @@ const config: Config = {
             fontFamily: {
                 sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
                 display: ['"Playfair Display"', 'serif'],
-            }
+            },
+            fontSize: {
+                'editorial': ['clamp(3.5rem, 8vw, 7rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+                'editorial-sm': ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.01em' }],
+            },
         },
     },
     plugins: [],

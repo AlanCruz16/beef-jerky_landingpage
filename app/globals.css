@@ -6,9 +6,7 @@
     --background: #050505;
     --foreground: #ededed;
     --berry-punch: #D41C61;
-    /* Approximate "Berry Punch" */
     --golden-saffron: #F59E0B;
-    /* Approximate "Golden Saffron" */
     --surface: #0A0A0A;
     --surface-light: #141414;
     --muted: #888888;
@@ -19,7 +17,6 @@ body {
     color: var(--foreground);
     background: var(--background);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    /* SF Pro style */
     overflow-x: hidden;
 }
 
@@ -48,4 +45,85 @@ body {
 
 .text-gold {
     color: var(--golden-saffron);
+}
+
+/* ===== BUTCHER'S TABLE DESIGN SYSTEM ===== */
+
+/* Gradient Section Transitions — no hard borders */
+.section-gradient {
+    background: linear-gradient(180deg, #050505 0%, #0A0A0A 50%, #050505 100%);
+}
+
+.section-gradient-alt {
+    background: linear-gradient(180deg, #0A0A0A 0%, #0E0E0E 50%, #0A0A0A 100%);
+}
+
+/* Gold Accent Line */
+.gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--golden-saffron), transparent);
+}
+
+.gold-line-vertical {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--golden-saffron), transparent);
+}
+
+/* Gold accent decorations */
+.gold-accent::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--golden-saffron);
+    margin-top: 1.5rem;
+}
+
+.gold-accent-center::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--golden-saffron);
+    margin: 1.5rem auto 0;
+}
+
+/* Oversized Serif Typography */
+.text-editorial {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+}
+
+.text-editorial-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Progress bar for testimonial carousel */
+@keyframes progress-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.progress-bar-fill {
+    animation: progress-fill 5s linear forwards;
+    transform-origin: left;
+}
+
+/* Scroll reveal animations */
+.reveal-left {
+    will-change: transform, opacity;
+}
+
+.reveal-right {
+    will-change: transform, opacity;
+}
+
+/* Small Caps utility */
+.small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
 }
