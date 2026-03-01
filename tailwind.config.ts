@@ -12,6 +12,7 @@ const config: Config = {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
                 berry: "var(--berry-punch)",
+                "berry-deep": "var(--berry-deep)",
                 gold: "var(--golden-saffron)",
                 surface: "var(--surface)",
                 "surface-light": "var(--surface-light)",
@@ -20,8 +21,11 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
-                display: ['"Playfair Display"', 'serif'],
-            }
+                display: ['"Barlow Condensed"', '"Playfair Display"', 'serif'],
+            },
+            animation: {
+                'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+            },
         },
     },
     plugins: [],
