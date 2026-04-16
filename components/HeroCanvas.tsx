@@ -5,11 +5,16 @@ import { useScroll, useSpring, useMotionValueEvent, useTransform, motion } from 
 
 export default function HeroCanvas() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [images, setImages] = useState<HTMLImageElement[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [loadingProgress, setLoadingProgress] = useState(0);
 
-    const { scrollYProgress } = useScroll();
+    // Scope scroll progress to the hero container only
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
     const smoothProgress = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 30,
@@ -122,38 +127,39 @@ export default function HeroCanvas() {
         }
     }, [isLoaded]);
 
-    // Fade out logic
+    // Fade out logic — scoped to hero container scroll
     const opacity = useSpring(useTransform(scrollYProgress, [0.85, 0.98], [0, 1]), {
         stiffness: 100,
         damping: 30
     });
 
-    if (!isLoaded) {
-        return (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#050505] text-white">
-                <div className="flex flex-col items-center gap-4">
-                    {/* Spinner */}
-                    <div className="w-12 h-12 border-4 border-white/20 border-t-[#D41C61] rounded-full animate-spin"></div>
-                    <p className="font-mono text-sm tracking-widest">LOADING {loadingProgress}%</p>
+    return (
+        <>
+            {/* Loading overlay — always render container behind it */}
+            {!isLoaded && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#050505] text-white">
+                    <div className="flex flex-col items-center gap-4">
+                        {/* Spinner */}
+                        <div className="w-12 h-12 border-4 border-white/20 border-t-[#D41C61] rounded-full animate-spin"></div>
+                        <p className="font-mono text-sm tracking-widest">LOADING {loadingProgress}%</p>
+                    </div>
+                </div>
+            )}
+
+            <div ref={containerRef} className="h-[600vh] relative">
+                <div className="sticky top-0 h-screen w-full overflow-hidden">
+                    <canvas
+                        ref={canvasRef}
+                        className="w-full h-full object-contain"
+                    />
+
+                    {/* Fade to black overlay for smooth transition */}
+                    <motion.div
+                        className="absolute inset-0 bg-[#050505] pointer-events-none"
+                        style={{ opacity }}
+                    />
                 </div>
             </div>
-        );
-    }
-
-    return (
-        <div className="h-[450vh] relative">
-            <div className="sticky top-0 h-screen w-full overflow-hidden">
-                <canvas
-                    ref={canvasRef}
-                    className="w-full h-full object-contain"
-                />
-
-                {/* Fade to black overlay for smooth transition */}
-                <motion.div
-                    className="absolute inset-0 bg-[#050505] pointer-events-none"
-                    style={{ opacity }}
-                />
-            </div>
-        </div>
+        </>
     );
 }
