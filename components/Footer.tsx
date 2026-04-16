@@ -7,42 +7,45 @@ import { motion } from 'framer-motion';
 export default function Footer() {
     return (
         <footer className="relative z-20">
-            {/* ═══════════════ Split Footer ═══════════════ */}
+            {/* ═══════════════ Full-Bleed Logo Section ═══════════════ */}
+            <div className="relative w-full flex items-center justify-center overflow-hidden bg-black">
+                <motion.img
+                    src="/Sonoralogo.png"
+                    alt="Hecho en Sonora — Productos 100% Regionales"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-4xl mx-auto"
+                />
+            </div>
+
+            {/* ═══════════════ Newsletter Strip ═══════════════ */}
             <div className="section-gradient-alt">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center"
+                        className="text-center"
                     >
-                        {/* Left: Brand Wordmark */}
-                        <div className="text-center md:text-left space-y-5">
-                            <h2 className="text-editorial font-display text-white">
-                                Lavínia
-                            </h2>
-                            <p className="text-editorial-italic text-white/30 text-lg md:text-xl">
-                                Nutrición real para una vida real.
-                            </p>
-                        </div>
-
-                        {/* Right: Email Subscription */}
-                        <div className="text-center md:text-left">
-                            <p className="text-gold/40 text-xs tracking-[0.4em] uppercase mb-6">
-                                Newsletter
-                            </p>
-                            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
-                                <input
-                                    type="email"
-                                    placeholder="Tu correo electrónico"
-                                    className="flex-1 bg-transparent border-b border-white/10 focus:border-gold/50 px-0 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition-colors font-light tracking-wide"
-                                />
-                                <button className="px-8 py-3 border border-gold/30 text-gold text-xs uppercase tracking-[0.3em] hover:bg-gold hover:text-background transition-all duration-500 font-medium shrink-0">
-                                    Suscribir
-                                </button>
-                            </form>
-                        </div>
+                        <p className="text-editorial-italic text-white/30 text-lg md:text-xl mb-8">
+                            Nutrición real para una vida real.
+                        </p>
+                        <p className="text-gold/40 text-xs tracking-[0.4em] uppercase mb-6">
+                            Newsletter
+                        </p>
+                        <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                            <input
+                                type="email"
+                                placeholder="Tu correo electrónico"
+                                className="flex-1 bg-transparent border-b border-white/10 focus:border-gold/50 px-0 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition-colors font-light tracking-wide"
+                            />
+                            <button className="px-8 py-3 border border-gold/30 text-gold text-xs uppercase tracking-[0.3em] hover:bg-gold hover:text-background transition-all duration-500 font-medium shrink-0">
+                                Suscribir
+                            </button>
+                        </form>
                     </motion.div>
                 </div>
             </div>

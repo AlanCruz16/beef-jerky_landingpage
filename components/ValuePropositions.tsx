@@ -5,22 +5,25 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const values = [
     {
-        icon: "grass",
-        title: "Res de Pastoreo",
-        subtitle: "100% Grass-Fed & Finished",
-        description: "Criada éticamente en las pasturas abiertas de Sonora. Toda nuestra carne proviene de ganado alimentado exclusivamente con pasto, garantizando un sabor superior y un perfil nutricional excepcional.",
-    },
-    {
-        icon: "restaurant_menu",
-        title: "Alto en Proteína",
-        subtitle: "26g por Porción",
-        description: "Repleto de proteína natural para alimentar tu día. Sin rellenos innecesarios, sin conservantes artificiales — solo energía pura derivada de carne real de la más alta calidad.",
+        icon: "menu_book",
+        title: "3 Ingredientes",
+        subtitle: "Carne · Sal · Especias",
+        description: "Nuestro beef jerky se hace con solo 3 ingredientes: carne de res, sal y especias. Sin conservadores, sin rellenos, sin complicaciones — solo lo que necesitas.",
+        image: "/values/3-ingredientes.png",
     },
     {
         icon: "verified_user",
-        title: "Ingredientes Premium",
-        subtitle: "Sin Gluten · Sin Azúcar",
-        description: "Una vida más saludable comienza con comida real. Usamos solo ingredientes enteros que puedes pronunciar. Cada ingrediente es seleccionado a mano por su pureza y calidad.",
+        title: "Alto en Proteína · Sin Azúcar · Sin Gluten",
+        subtitle: "26g por Porción · Ingredientes Premium",
+        description: "Repleto de proteína natural para alimentar tu día. Sin azúcar añadida, sin gluten, sin rellenos innecesarios. Usamos solo ingredientes enteros que puedes pronunciar.",
+        image: "/values/proteina-premium.png",
+    },
+    {
+        icon: "landscape",
+        title: "Hecho en Sonora",
+        subtitle: "Producto 100% Sonorense",
+        description: "Hecho con orgullo en Sonora. Desde la selección de la carne hasta el empaque final, cada paso sucede aquí — apoyando a productores locales y celebrando nuestra tierra.",
+        image: "/values/hecho-en-sonora.png",
     },
 ];
 
@@ -72,15 +75,12 @@ function FullBleedPanel({ value, index }: { value: typeof values[0]; index: numb
                         viewport={{ once: true, margin: '-100px' }}
                         className="relative aspect-[4/5] md:aspect-[3/4] rounded-sm overflow-hidden"
                     >
-                        {/* Placeholder editorial imagery */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-surface-light to-surface flex items-center justify-center border border-white/[0.04]">
-                            <div className="text-center space-y-4">
-                                <span className="material-symbols-outlined text-gold/30 text-7xl">
-                                    {value.icon}
-                                </span>
-                                <p className="text-white/10 text-xs tracking-[0.3em] uppercase">Editorial Photo</p>
-                            </div>
-                        </div>
+                        {/* Editorial imagery */}
+                        <img
+                            src={value.image}
+                            alt={value.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
                         {/* Gold corner accent */}
                         <div className="absolute top-0 left-0 w-16 h-[1px] bg-gold/30"></div>
                         <div className="absolute top-0 left-0 w-[1px] h-16 bg-gold/30"></div>
@@ -109,6 +109,12 @@ export default function ValuePropositions() {
                     <h2 className="text-editorial font-display text-white gold-accent-center">
                         Por Qué Lavínia
                     </h2>
+                    <p className="text-white/50 font-light text-lg leading-[1.8] max-w-2xl mx-auto mt-8">
+                        En Casa Lavínia creamos productos con historia, corazón y propósito.
+                        Cada vez que eliges uno, comes bien… y formas parte de algo más grande.
+                        Hechos con ingredientes sonorenses, altos en proteína y sin azúcar.
+                        Pensados para quienes cuidan lo que comen… o simplemente buscan algo que sepa bien.
+                    </p>
                 </motion.div>
             </div>
 

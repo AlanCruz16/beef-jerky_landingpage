@@ -6,7 +6,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'framer
 const stats = [
     { value: 26, suffix: 'g', label: 'PROTEÍNA POR PORCIÓN' },
     { value: 0, suffix: 'g', label: 'AZÚCAR AÑADIDA' },
-    { value: 100, suffix: '%', label: 'GRASS-FED' },
+    { value: 0, suffix: '%', label: 'GLUTEN' },
 ];
 
 function AnimatedCounter({ value, suffix, label, index }: { value: number; suffix: string; label: string; index: number }) {

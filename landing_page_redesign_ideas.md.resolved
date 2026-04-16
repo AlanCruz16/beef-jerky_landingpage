@@ -1,0 +1,108 @@
+# 🥩 Casa Lavínia — Landing Page Redesign: 3 Creative Concepts
+
+The hero section (scroll-linked canvas animation) stays **untouched**. Below are 3 distinct directions for redesigning everything else: the **Features Ribbon**, **Value Propositions**, **Testimonials**, and **Footer**.
+
+---
+
+## Concept 1 — *"Butcher's Table" — Cinematic Storytelling*
+
+> **Mood:** Dark, editorial, magazine-quality. Think *Eater* meets *Kinfolk* meets a premium steakhouse menu.
+
+### Design Philosophy
+Replace the current card-grid layout with a **full-width, scroll-driven editorial experience** where each section feels like a chapter in a premium food magazine.
+
+### Section Breakdown
+
+| Section | Current | Redesigned |
+|---|---|---|
+| **Features Ribbon** | Infinite horizontal marquee with text | **Staggered stat counters** — large typographic numbers (26g, 0g, 100%) that animate up on scroll, with thin muted labels beneath. Horizontal line separators instead of a scrolling marquee. |
+| **Value Propositions** | 3-column icon grid | **Alternating full-bleed panels** — each value gets a full-viewport-height row with oversized typography on one side and a generated product/ingredient photo on the other, alternating left-right. Parallax scroll on images. |
+| **Testimonials** | 3 static cards | **Single-testimonial spotlight** — one large quote at a time with a cinematic fade-crossfade between them, auto-rotating. Giant quotation marks, name in small caps below. A thin progress bar shows which testimonial is active. |
+| **Footer** | 4-column grid | **Minimal split footer** — two halves: left has the brand wordmark and a single-line tagline, right has a single email input and a CTA button. Social links as tiny icons in the very bottom bar. Ultra-clean. |
+
+### Key Visual Touches
+- Oversized serif typography (90px+ section headers)
+- Horizontal scroll-triggered reveals (text slides in from either side)
+- Gold accent lines and `::after` pseudo-element decorations
+- Deep `#050505` → `#0A0A0A` gradient transitions between sections instead of hard borders
+
+### Animations
+- **Scroll-linked number counters** (e.g. "26" counts up from 0)
+- **Parallax image shifts** on the value prop section
+- **Crossfade carousel** for testimonials with a smooth 5s interval
+- **Staggered fade-ins** with `translateX` offsets for editorial feel
+
+---
+
+## Concept 2 — *"Smoke & Fire" — Bold, Immersive, Brand-Forward*
+
+> **Mood:** Athletic, high-energy, unapologetically bold. Think *Nike SNKRS* meets *Prime Hydration* meets craft-food branding.
+
+### Design Philosophy
+Turn the landing page into a **high-contrast, graphic-heavy brand experience** that feels like a product drop. Big text, aggressive animations, texture overlays, and a sense of urgency.
+
+### Section Breakdown
+
+| Section | Current | Redesigned |
+|---|---|---|
+| **Features Ribbon** | Infinite horizontal marquee | **Vertical "facts strip"** — a sticky sidebar-style vertical strip on the left edge showing the 4 key facts with bold icons, while corresponding content scrolls on the right. Disappears on mobile, converting to a horizontal snap-scroll carousel. |
+| **Value Propositions** | 3-column icon grid | **Bento grid layout** — asymmetric grid of cards (1 large + 2 small, like Apple's product pages) with glassmorphism backgrounds, subtle grain textures, and glow effects on hover. Each card has a bold icon, short title, and a flip animation to reveal the description. |
+| **Testimonials** | 3 static cards | **Horizontal drag carousel** — a full-width, touch-draggable card carousel with oversized quotes, customer avatar placeholders, and a berry-gradient left-edge glow. Cards have a 3D perspective tilt on hover. |
+| **Footer** | 4-column grid | **Immersive CTA-first footer** — the top half is a full-width dark-gradient CTA block ("¿Listo para probar?") with a large button, and below it a compact, single-line footer with brand, links, and copyright. |
+
+### Key Visual Touches
+- Noise/grain texture overlay on dark sections (`mix-blend-mode: overlay`)
+- Glassmorphism cards with `backdrop-blur` and subtle border glow
+- Berry-to-purple gradient accents instead of flat berry color
+- Bold condensed sans-serif for section titles (e.g. `Inter Tight` or `Barlow Condensed`)
+
+### Animations
+- **Bento card flip** — cards do a Y-axis 3D flip on hover to reveal description
+- **Drag carousel** — `framer-motion` drag with momentum and snap
+- **Glow pulse** — subtle box-shadow animation on featured cards
+- **Scroll-triggered scale** — sections scale from 0.95 → 1.0 as they enter the viewport
+
+---
+
+## Concept 3 — *"Ranch to Table" — Organic, Warm, Story-Driven*
+
+> **Mood:** Artisan, authentic, grounded. Think *Patagonia Provisions* meets *Sweetgreen* meets hand-drawn craft aesthetics.
+
+### Design Philosophy
+Shift the emotional tone from "dark tech-premium" to **"warm artisan craft"** while keeping the dark palette. The idea is to tell the **origin story** of the product — from Sonoran ranches to the finished jerky — with a more organic, human feel.
+
+### Section Breakdown
+
+| Section | Current | Redesigned |
+|---|---|---|
+| **Features Ribbon** | Infinite horizontal marquee | **Ingredient ticker tape** — a hand-drawn-style ribbon with small illustrated icons (a cow, a chile pepper, a protein molecule, a wheat stalk with an ✕) flowing horizontally. Each icon is separated by a thin gold dot. Warm, craft feel. |
+| **Value Propositions** | 3-column icon grid | **Horizontal storytelling timeline** — a visual timeline from left to right: "🐄 Rancho → 🌶 Ingredientes → 🔥 Proceso → 📦 Tu Mesa". Each step is a circular node on the timeline with a short description below there is a connecting line between nodes that animates as you scroll. |
+| **Testimonials** | 3 static cards | **Community wall** — a masonry-style grid of small testimonial "post-it" style cards at different slight rotations (±2°), with different accent border colors (berry, gold, white). Feels like a real cork-board of customer reviews. Animated entrance: cards "pin" onto the board one by one. |
+| **Footer** | 4-column grid | **Earthy, centered stack** — single centered column: brand logo, tagline, social icons, then a warm "Hecho en Sonora 🇲🇽" badge with a hand-drawn circle around it. Newsletter input below with a rounded, friendly design. Minimal links at the very bottom. |
+
+### Key Visual Touches
+- Warm gold tones emphasized more heavily than berry
+- `font-family` mixed with a handwritten/script accent font for taglines
+- SVG hand-drawn underlines and circle decorations
+- Subtle warm `#1a1510` tint in surface backgrounds instead of pure neutral `#0A0A0A`
+
+### Animations
+- **Timeline draw-on** — SVG path animation draws the connecting line between timeline nodes as you scroll
+- **Masonry pin-in** — testimonial cards animate in with a slight rotation + drop, like being pinned to a board
+- **Icon illustration float** — ingredient icons have a subtle 2px up-down hover animation
+- **Warm glow** — gold-tinted `box-shadow` on hover for all interactive elements
+
+---
+
+## Quick Comparison
+
+| Aspect | Concept 1: Butcher's Table | Concept 2: Smoke & Fire | Concept 3: Ranch to Table |
+|---|---|---|---|
+| **Vibe** | Cinematic, editorial | Bold, athletic, modern | Artisan, warm, authentic |
+| **Layout** | Full-bleed alternating panels | Bento grid + drag carousel | Timeline + masonry wall |
+| **Typography** | Oversized serif | Bold condensed sans | Mixed serif + handwritten |
+| **Accent Color** | Gold dominant | Berry-to-purple gradient | Warm gold + earthy tones |
+| **Animations** | Scroll-parallax + crossfade | 3D flips + drag physics | SVG draw-on + pin-in |
+| **Complexity** | Medium | High | Medium-High |
+| **Mobile Experience** | Clean stacking | Snap-scroll adaptations | Vertical timeline + stacked cards |
+| **Best For** | Premium/luxury positioning | High-energy product drops | Origin story & authenticity |
